@@ -1,0 +1,15 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    ::                    ff02::16              ICMPv6   76     Multicast Listener Report Message v2
+
+Frame 1: 76 bytes on wire (608 bits), 76 bytes captured (608 bits) on interface 0
+Raw packet data
+Internet Protocol Version 6, Src: :: (::), Dst: ff02::16 (ff02::16)
+Internet Control Message Protocol v6
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.228193000    ::                    ff02::16              ICMPv6   76     Multicast Listener Report Message v2
+
+Frame 2: 76 bytes on wire (608 bits), 76 bytes captured (608 bits) on interface 0
+Raw packet data
+Internet Protocol Version 6, Src: :: (::), Dst: ff02::16 (ff02::16)
+Internet Control Message Protocol v6

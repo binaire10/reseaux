@@ -40,20 +40,36 @@ int tun_alloc(char *dev)
   }
   strcpy(dev, ifr.ifr_name);
   return fd;
-}      
+}
+
+int copy_desc_data (int src, int dest) {
+  char buffer[256];
+  ssize_t taille;
+  while(1) {
+    taille = read(src, buffer, 256);
+    if(taille == -1) {
+      perror("read");
+      return -1;
+    }
+    write(dest, buffer, taille);
+  } 
+  return taille;
+}
 
 int main (int argc, char** argv){
 
   int tunfd;
-  printf("Création de %s\n",argv[1]);
+  //printf("Création de %s\n",argv[1]);
   tunfd = tun_alloc(argv[1]);
-  printf("Faire la configuration de %s...\n",argv[1]);
+  /*printf("Faire la configuration de %s...\n",argv[1]);
   printf("Appuyez sur une touche pour continuer\n");
   getchar();
   printf("Interface %s Configurée:\n",argv[1]);
   system("ip addr");
   printf("Appuyez sur une touche pour terminer\n");
-  getchar();
+  getchar();*/
+
+  int a = copy_desc_data(tunfd, STDOUT_FILENO);
 
   return 0;
 }
