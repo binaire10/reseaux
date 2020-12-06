@@ -157,16 +157,16 @@ int main(int argc, char **argv) {
         current_event = pending_event;
         if (select(FD_SETSIZE, &current_event, nullptr, nullptr, nullptr) == -1)
             perror("select");
-        if (FD_ISSET(STDIN_FILENO, &current_event)) {
-            char c;
-            if (!(std::cin >> c)) {
-                close(listener);
-                close(fdTun);
-                close(fdExt);
-                close(fdServer);
-                return 0;
-            }
-        }
+        // if (FD_ISSET(STDIN_FILENO, &current_event)) {
+        //     char c;
+        //     if (!(std::cin >> c)) {
+        //         close(listener);
+        //         close(fdTun);
+        //         close(fdExt);
+        //         close(fdServer);
+        //         return 0;
+        //     }
+        // }
 
         if (FD_ISSET(fdExt, &current_event))
             if (copy_desc_data(fdExt, fdTun) < 0) {
