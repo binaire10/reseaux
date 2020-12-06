@@ -21,6 +21,18 @@ eth1:
     - ipaddr: 172.16.2.163
     - netmask: 28
 
+tun0:
+  network.managed:
+    - enabled: True
+    - type: eth
+    - proto: none
+    - enable_ipv4: false
+    - ipv6proto: static
+    - enable_ipv6: true
+    - ipv6_autoconf: no
+    - ipv6ipaddr: fc00:1234:ffff::1
+    - ipv6netmask: 64
+
 eth2:
   network.managed:
     - enabled: True
