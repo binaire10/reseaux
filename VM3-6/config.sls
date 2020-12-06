@@ -45,6 +45,15 @@ routes:
       - name: LAN1-6
         ipaddr: fc00:1234:1::/64
         gateway: fc00:1234:2::2
+    - name: eth2
+    - routes:
+      - name: LAN3-6
+        ipaddr: fc00:1234:3::/64
+        gateway: fc00:1234:4::3
+
+      - name: TUN0
+        ipaddr: fc00:1234:ffff::/64
+        gateway: fc00:1234:4::3
 
 net.ipv6.conf.all.forwarding:
   sysctl:
